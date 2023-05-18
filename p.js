@@ -1,6 +1,6 @@
 // Like jq, but worse
 // curl -L https://raw.githubusercontent.com/kebien6020/jqjs/main/p.js -o p.js
-// node -e 'with(require("./p.js")){r()}'
+// find . -maxdepth 1 -type f | node -e 'with(require("./p.js")){r()}'
 
 const fs = require('fs')
 
