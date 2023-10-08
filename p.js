@@ -32,9 +32,13 @@ const first = d => d[0]
 const last = d => d[d.length - 1]
 const enumerate = d => d.map((o, idx) => [idx, o])
 const flat = d => d.flat()
+const window = l => d => d.flatMap((_, i) => i <= d.length - l ? [d.slice(i, i + l)] : [])
+const sort = comp => d => d.sort(comp)
+const compare = (a, b) => a < b ? -1 : a > b ? 1 : 0
+const by = proj => (a, b) => compare(proj(a), proj(b))
 
 module.exports = {
 	i, o, oj, c, p, r, rj,
 	map, reduce, filter, group_by, reverse, split, join, lines, unlines,
-	first, last, enumerate, flat
+	first, last, enumerate, flat, window, sort, compare, by
 }
